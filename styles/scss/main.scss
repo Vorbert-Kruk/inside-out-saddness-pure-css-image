@@ -1,11 +1,14 @@
 @import './basic-page-styling.scss';
 
 .head {
+  --drawing-width: 340px;
+
   position: relative;
   width: $head-size;
   height: $head-size;
   background-color: $head-color;
   border-radius: 50%;
+  font-size: calc(var(--drawing-width, 340px) / 34);
 
   &::before,
   &::after {
@@ -16,15 +19,14 @@
   }
 
   &::before {
-    $hair-height: $hair-width * 0.5;
     transform: translateX(-50%) translateY($hair-offset * -1);
-    height: $hair-height;
+    height: $hair-height-top;
     border-bottom: 0;
-    border-radius: $hair-height $hair-height 0 0;
+    border-radius: $hair-height-top $hair-height-top 0 0;
   }
 
   &::after {
-    height: $hair-width * 0.35;
+    height: $hair-height-bottom;
     transform: translateX(-50%);
     bottom: $hair-width * 0.15 - $hair-offset;
   }
@@ -77,7 +79,7 @@
       right: 0;
       width: $right-forehead-hair-width;
       height: $right-forehead-hair-height;
-      transform: rotate(50deg) translateY(-7px) translateX(42px);
+      transform: rotate(50deg) translateY(-0.7em) translateX(4.2em);
       border-top-right-radius: $right-forehead-hair-radius;
       border-top-left-radius: $right-forehead-hair-radius;
     }
@@ -102,11 +104,11 @@
   }
 
   &--right {
-    left: calc(100% - 1px);
+    left: calc(100% - 0.1em);
   }
 
   &--left {
-    right: calc(100% - 1px);
+    right: calc(100% - 0.1em);
   }
 }
 
@@ -137,12 +139,12 @@
   .glasses--left & {
     right: 0;
     border-right-color: $eyebrow-color;
-    transform: translateY(48px) rotate(57deg);
+    transform: translateY(4.8em) rotate(57deg);
   }
 
   .glasses--right & {
     left: 0;
     border-left-color: $eyebrow-color;
-    transform: translateY(48px) rotate(-57deg);
+    transform: translateY(4.8em) rotate(-57deg);
   }
 }

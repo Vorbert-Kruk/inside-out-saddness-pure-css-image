@@ -6,12 +6,11 @@ $head-color: #94bfdc;
 $eyebrow-color: #5e9fca;
 $eye-color: #1f2b7b;
 
-$scale-factor: 2;
+$head-size: 30em;
 
-// Zrobić basic head size
-$head-size: 150px * $scale-factor;
-
-$hair-width: 170px * $scale-factor;
+$hair-width: 34em;
+$hair-height-top: $hair-width * 0.5;
+$hair-height-bottom: 12em;
 $hair-offset: ($hair-width - $head-size) * 0.5;
 
 $side-hair-width: $head-size * 0.1;
@@ -25,12 +24,10 @@ $left-forehead-hair-radius: $head-size * 0.22;
 
 $right-forehead-hair-width: $head-size * 0.6;
 $right-forehead-hair-height: $head-size * 0.25;
-$right-forehead-hair-offset: 7px;
+$right-forehead-hair-offset: 0.7em;
 $right-forehead-hair-radius: $head-size * 0.22;
 
 $mouth-width: $head-size * 0.3;
-// $mouth-height: $mouth-width / 3;
-// $mouth-height: $mouth-width * 0.5;
 $mouth-height: $mouth-width * 0.25;
 $mouth-offset: $head-size * 0.12;
 
