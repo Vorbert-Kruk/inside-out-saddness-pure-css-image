@@ -24,12 +24,6 @@ body {
 
 .container {
   @include centerAbsolutely();
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   padding: 95px 125px;
   background-color: $light-color;
   border-radius: 0.75rem;
