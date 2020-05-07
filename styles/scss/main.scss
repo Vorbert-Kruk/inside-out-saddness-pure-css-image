@@ -98,6 +98,7 @@
     height: $glasses-size;
     border: $glasses-border-size solid $dark-color;
     border-radius: 50%;
+    overflow: hidden;
   }
 
   &--right {
@@ -136,12 +137,12 @@
   .glasses--left & {
     right: 0;
     border-right-color: $eyebrow-color;
-    transform: translateY(54px) rotate(70deg);
+    transform: translateY(48px) rotate(57deg);
   }
 
   .glasses--right & {
     left: 0;
     border-left-color: $eyebrow-color;
-    transform: translateY(54px) rotate(-70deg);
+    transform: translateY(48px) rotate(-57deg);
   }
 }
