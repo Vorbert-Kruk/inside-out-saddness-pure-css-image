@@ -17,7 +17,7 @@ You can use your SCSS compiler or alternatively do the following steps, to achie
 2. Use the command: `npm install` (You have to do this just once)
 3. Use the command: `npm run watch-styles`, to have the compiler running :)
 
-Compiler is working in the real time, so everytime you make a change in one of the SCSS files, then this will be automatically compiled to the main.css file.
+Compiler is working in the real time, so everytime you make a change in one of the SCSS files, then this will be automatically compiled into to the main.css file (in the minified format).
 
 # Current SCSS file structure
 
