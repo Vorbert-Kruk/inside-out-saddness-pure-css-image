@@ -28,83 +28,120 @@
     transform: translateX(-50%);
     bottom: $hair-width * 0.15 - $hair-offset;
   }
+}
 
-  .mouth {
-    @include centerAbsolutely(horizontal);
+.mouth {
+  @include centerAbsolutely(horizontal);
 
-    bottom: $mouth-offset;
-    width: $mouth-width;
-    height: $mouth-height;
-    background-color: $light-color;
-    border-radius: $mouth-width $mouth-width 0 0;
+  bottom: $mouth-offset;
+  width: $mouth-width;
+  height: $mouth-height;
+  background-color: $light-color;
+  border-radius: $mouth-width $mouth-width 0 0;
+}
+
+.hair {
+  &::before,
+  &::after {
+    background-color: $hair-color;
+    width: $side-hair-width;
+    height: $side-hair-height;
+    bottom: $side-hair-offset;
   }
 
-  .hair {
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  &--forehead {
     &::before,
     &::after {
+      top: 0;
       background-color: $hair-color;
-      width: $side-hair-width;
-      height: $side-hair-height;
-      bottom: $side-hair-offset;
     }
 
     &::before {
-      left: 0;
+      width: $left-forehead-hair-width;
+      height: $left-forehead-hair-height;
+      transform: rotate(-24deg) translateY($left-forehead-hair-offset)
+        translateX($left-forehead-hair-offset * -0.5);
+      border-top-left-radius: $left-forehead-hair-radius;
+      border-top-right-radius: $left-forehead-hair-radius;
     }
 
     &::after {
       right: 0;
-    }
-
-    &--forehead {
-      &::before,
-      &::after {
-        top: 0;
-        background-color: $hair-color;
-      }
-
-      &::before {
-        width: $left-forehead-hair-width;
-        height: $left-forehead-hair-height;
-        transform: rotate(-24deg) translateY($left-forehead-hair-offset)
-          translateX($left-forehead-hair-offset * -0.5);
-        border-top-left-radius: $left-forehead-hair-radius;
-        border-top-right-radius: $left-forehead-hair-radius;
-      }
-
-      &::after {
-        right: 0;
-        width: $right-forehead-hair-width;
-        height: $right-forehead-hair-height;
-        transform: rotate(50deg) translateY(-7px) translateX(42px);
-        border-top-right-radius: $right-forehead-hair-radius;
-        border-top-left-radius: $right-forehead-hair-radius;
-      }
+      width: $right-forehead-hair-width;
+      height: $right-forehead-hair-height;
+      transform: rotate(50deg) translateY(-7px) translateX(42px);
+      border-top-right-radius: $right-forehead-hair-radius;
+      border-top-left-radius: $right-forehead-hair-radius;
     }
   }
+}
 
-  .glasses {
-    @include centerAbsolutely(horizontal);
-    bottom: $glasses-offset;
-    height: $glasses-border-size;
-    width: $glasses-nose-rectangle-width;
-    background-color: $dark-color;
+.glasses {
+  @include centerAbsolutely(horizontal);
+  bottom: $glasses-offset;
+  width: $glasses-nose-rectangle-width;
+  height: $glasses-border-size;
+  background-color: $dark-color;
 
-    &--right,
-    &--left {
-      @include centerAbsolutely(vertical);
-      width: $glasses-size;
-      height: $glasses-size;
-      border: $glasses-border-size solid $dark-color;
-      border-radius: 50%;
-    }
+  &--right,
+  &--left {
+    @include centerAbsolutely(vertical);
+    width: $glasses-size;
+    height: $glasses-size;
+    border: $glasses-border-size solid $dark-color;
+    border-radius: 50%;
+  }
 
-    &--right {
-      left: calc(100% - 1px);
-    }
+  &--right {
+    left: calc(100% - 1px);
+  }
 
-    &--left {
-      right: calc(100% - 1px);
-    }
+  &--left {
+    right: calc(100% - 1px);
+  }
+}
+
+.eye {
+  @include centerAbsolutely(vertical);
+  width: $eye-size;
+  height: $eye-size;
+  background-color: $eye-color;
+  border-radius: 50%;
+
+  .glasses--left & {
+    right: $eye-offset;
+  }
+
+  .glasses--right & {
+    left: $eye-offset;
+  }
+}
+
+.eyebrow {
+  position: absolute;
+  bottom: 100%;
+  width: $glasses-size * 0.7;
+  height: inherit;
+  border: $eyebrow-height solid transparent;
+  border-radius: 50%;
+
+  .glasses--left & {
+    right: 0;
+    border-right-color: $eyebrow-color;
+    transform: translateY(54px) rotate(70deg);
+  }
+
+  .glasses--right & {
+    left: 0;
+    border-left-color: $eyebrow-color;
+    transform: translateY(54px) rotate(-70deg);
   }
 }
