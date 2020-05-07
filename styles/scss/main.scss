@@ -34,12 +34,12 @@
 
 .mouth {
   @include centerAbsolutely(horizontal);
-
   bottom: $mouth-offset;
   width: $mouth-width;
   height: $mouth-height;
   background-color: $light-color;
   border-radius: $mouth-width $mouth-width 0 0;
+  animation: mouthAnimation $animation-properties;
 }
 
 .hair {
@@ -92,6 +92,7 @@
   width: $glasses-nose-rectangle-width;
   height: $glasses-border-size;
   background-color: $dark-color;
+  animation: glassesAnimation $animation-properties;
 
   &--right,
   &--left {
@@ -118,12 +119,16 @@
   height: $eye-size;
   background-color: $eye-color;
   border-radius: 50%;
+  transform: translateY(0);
+  animation: eyeAnimation $animation-properties;
 
   .glasses--left & {
+    --animation-properties-multiplier: -1;
     right: $eye-offset;
   }
 
   .glasses--right & {
+    --animation-properties-multiplier: 1;
     left: $eye-offset;
   }
 }
@@ -135,16 +140,54 @@
   height: inherit;
   border: $eyebrow-height solid transparent;
   border-radius: 50%;
+  animation: eyebrowAnimation $animation-properties;
 
   .glasses--left & {
     right: 0;
     border-right-color: $eyebrow-color;
-    transform: translateY(4.8em) rotate(57deg);
+    transform: translateY(5.4em) rotate(57deg);
+    --animation-properties-multiplier: -1;
   }
 
   .glasses--right & {
     left: 0;
     border-left-color: $eyebrow-color;
-    transform: translateY(4.8em) rotate(-57deg);
+    transform: translateY(5.4em) rotate(-57deg);
+    --animation-properties-multiplier: 1;
+  }
+}
+
+@keyframes eyeAnimation {
+  40%,
+  60% {
+    transform: translateX(calc(1em * var(--animation-properties-multiplier))) translateY(1em);
+  }
+}
+
+@keyframes eyebrowAnimation {
+  40%,
+  60% {
+    transform: translateY(6.8em) translateX(calc(0.5em * var(--animation-properties-multiplier)))
+      rotate(calc(-70deg * var(--animation-properties-multiplier)));
+  }
+}
+
+@keyframes glassesAnimation {
+  40%,
+  60% {
+    transform: translateX(-50%) translateY(1.25em);
+  }
+}
+
+@keyframes mouthAnimation {
+  0%,
+  100% {
+    border-radius: $mouth-width $mouth-width $mouth-width * 0.5 $mouth-width * 0.5;
+    transform: translateX(-50%) translateY(-1em);
+  }
+  40%,
+  60% {
+    border-radius: $mouth-width $mouth-width 0 0;
+    transform: translateX(-50%) translateY(0);
   }
 }
