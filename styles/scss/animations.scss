@@ -1,0 +1,35 @@
+@keyframes eyeAnimation {
+  40%,
+  60% {
+    transform: translateX(calc(1em * var(--animation-properties-multiplier))) translateY(1em);
+  }
+}
+
+@keyframes eyebrowAnimation {
+  40%,
+  60% {
+    transform: translateY(6.8em) translateX(calc(0.5em * var(--animation-properties-multiplier)))
+      rotate(calc(-70deg * var(--animation-properties-multiplier)));
+  }
+}
+
+@keyframes glassesAnimation {
+  40%,
+  60% {
+    transform: translateX(-50%) translateY(1.25em);
+  }
+}
+
+@keyframes mouthAnimation {
+  0%,
+  100% {
+    border-radius: $mouth-width $mouth-width $mouth-width * 0.5 $mouth-width * 0.5;
+    transform: translateX(-50%) translateY(-1em);
+  }
+
+  40%,
+  60% {
+    border-radius: $mouth-width $mouth-width 0 0;
+    transform: translateX(-50%) translateY(0);
+  }
+}
