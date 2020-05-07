@@ -5,3 +5,10 @@ $hair-color: #005bbb;
 $head-color: #94bfdc;
 $eyebrow-color: #5e9fca;
 $eye-color: #1f2b7b;
+
+$scale-factor: 2;
+
+$head-size: 150px * $scale-factor;
+
+$hair-width: 170px * $scale-factor;
+$hair-offset: ($hair-width - $head-size) * 0.5;
