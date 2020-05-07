@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  @extend %centerElement;
+  @include centerAbsolutely();
 
   display: flex;
   flex-direction: column;

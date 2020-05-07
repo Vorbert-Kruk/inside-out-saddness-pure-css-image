@@ -30,4 +30,14 @@
     transform: translateX(-50%);
     bottom: $hair-width * 0.15 - $hair-offset;
   }
+
+  .mouth {
+    @include centerAbsolutely(horizontal);
+
+    bottom: $mouth-offset;
+    width: $mouth-width;
+    height: $mouth-height;
+    background-color: $light-color;
+    border-radius: $mouth-width $mouth-width 0 0;
+  }
 }

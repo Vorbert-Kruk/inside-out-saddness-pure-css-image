@@ -12,3 +12,8 @@ $head-size: 150px * $scale-factor;
 
 $hair-width: 170px * $scale-factor;
 $hair-offset: ($hair-width - $head-size) * 0.5;
+
+$mouth-width: 45px * $scale-factor;
+// $mouth-height: $mouth-width / 3;
+$mouth-height: $mouth-width * 0.25;
+$mouth-offset: $head-size * 0.12;
