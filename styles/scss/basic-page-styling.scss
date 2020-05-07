@@ -27,4 +27,20 @@ body {
   padding: 95px 125px;
   background-color: $light-color;
   border-radius: 0.75rem;
+
+  @media screen and (max-width: 650px) {
+    padding: 50px 65px;
+
+    .head {
+      --drawing-width: 250px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 25px 35px;
+
+    .head {
+      --drawing-width: 200px;
+    }
+  }
 }
