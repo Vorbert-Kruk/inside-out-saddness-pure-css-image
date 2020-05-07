@@ -4,7 +4,7 @@
   "description": "Just an CSS image of the charcter (named \"Sadness\") from the animated movie: Inside out",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-styles": "node-sass -w styles/scss/ -o styles/css/ --output-style \"compressed\""
   },
   "repository": {
     "type": "git",
