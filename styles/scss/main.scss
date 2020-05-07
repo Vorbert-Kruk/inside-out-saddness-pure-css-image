@@ -82,4 +82,29 @@
       }
     }
   }
+
+  .glasses {
+    @include centerAbsolutely(horizontal);
+    bottom: $glasses-offset;
+    height: $glasses-border-size;
+    width: $glasses-nose-rectangle-width;
+    background-color: $dark-color;
+
+    &--right,
+    &--left {
+      @include centerAbsolutely(vertical);
+      width: $glasses-size;
+      height: $glasses-size;
+      border: $glasses-border-size solid $dark-color;
+      border-radius: 50%;
+    }
+
+    &--right {
+      left: calc(100% - 1px);
+    }
+
+    &--left {
+      right: calc(100% - 1px);
+    }
+  }
 }
