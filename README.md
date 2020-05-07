@@ -19,9 +19,10 @@ You can use your SCSS compiler or alternatively do the following steps, to achie
 
 Compiler is working in the real time, so everytime you make a change in one of the SCSS files, then this will be automatically compiled to the main.css file.
 
-# Current SCSS files structure
+# Current SCSS file structure
 
-- main.scss -> for styling the drawing
 - variables.scss -> for storing the variables, that are used in the other files
 - basic-page-styling.scss -> for styling the page itself
 - mixins.scss -> for SCSS [mixins](https://sass-lang.com/documentation/at-rules/mixin)
+- main.scss -> for styling the drawing
+- animations.scss -> for storing the drawing animations
